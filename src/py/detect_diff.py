@@ -47,18 +47,19 @@ with pd.ExcelWriter(f'{YYYYMMDD}_{form}_{output_file}.xlsx', engine='openpyxl') 
     # サンプル1のカラムを出力
     columns_df1 = pd.DataFrame({'id': range(1, len(df_sample1.columns) + 1),
                                 'column': df_sample1.columns})
-    columns_df1.to_excel(writer, sheet_name= old_version, index=False)
-    
+    columns_df1.to_excel(writer, sheet_name=old_version, index=False)
+
     # サンプル2のカラムを出力
     columns_df2 = pd.DataFrame({'id': range(1, len(df_sample2.columns) + 1),
                                 'column': df_sample2.columns})
-    columns_df2.to_excel(writer, sheet_name= new_version, index=False)
-    
+    columns_df2.to_excel(writer, sheet_name=new_version, index=False)
+
     # 削除されたカラムを出力
     if not removed_columns_df.empty:
-        removed_columns_df.to_excel(writer, sheet_name='削除されたカラム一覧', index=False)
+        removed_columns_df.to_excel(
+            writer, sheet_name='削除されたカラム一覧', index=False)
         print("Removed columns: ", removed_columns)
-    
+
     # 追加されたカラムを出力
     if not added_columns_df.empty:
         added_columns_df.to_excel(writer, sheet_name='追加されたカラム一覧', index=False)
