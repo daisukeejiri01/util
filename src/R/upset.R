@@ -23,9 +23,7 @@ upset(df,
         list(gridrows = 60, ncols = 2,
              plots = list(list(plot = scatter_plot, x = "Group", y = "column4"),
                           list(plot = scatter_plot, x = "Group", y = "column5"))))
-
-
-
+                          
 #sets.bar.color, sets, queriesオプション:グラフの色を指定
 upset(df, sets.bar.color = "#56B4E9",
       attribute.plots = 
